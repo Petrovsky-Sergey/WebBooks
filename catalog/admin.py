@@ -25,3 +25,7 @@ admin.site.register(Status)
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
     list_filter = ('book', 'status')
+    fieldset = (
+        ('Экземпляр книги', {'fields': ('book', 'imprint', 'inv_nom')}),
+        ('Статус и окончание его действия', {'fields': ('status', 'due_back')}),
+        )
