@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
             name='BookInstance',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('inv_nom', models.CharField(help_text='Введите тнвентарный номер экземпляра', max_length=20, null=True, verbose_name='Инвентарный номер')),
+                ('inv_nom', models.CharField(help_text='Введите инвентарный номер экземпляра', max_length=20, null=True, verbose_name='Инвентарный номер')),
                 ('imprint', models.CharField(help_text='Введите издательство и год выпуска', max_length=200, verbose_name='Издательство')),
                 ('due_back', models.DateField(blank=True, help_text='Введите конец срока статуса', null=True, verbose_name='Дата окончания статуса')),
                 ('book', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='catalog.book')),
