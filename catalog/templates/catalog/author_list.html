@@ -1,7 +1,7 @@
 {% extends 'base_generic.html' %}
 
 {% block content %}
-    <h1>Список авторов в базе данных:</h1>
+    <h1>Список авторов в базе:</h1>
     {% if author_list %}
         {% for author in author_list.all %}
         <p>{{ author.first_name }} {{ author.last_name }},
