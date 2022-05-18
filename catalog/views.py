@@ -1,10 +1,18 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import *
+from .forms import AuthorsForm
 from .models import Book, Author, BookInstance, Genre
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
+
+
+# получение данных из БД и загрузка шаблона authors_add.html
+def authors_add(request):
+    author = Author.objects.all()
+    authorsform = AuthorsForm()
+    return render(request, 'catalog/authors_add.html', {'form': authorsform, 'author': author})
 
 
 class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
