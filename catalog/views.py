@@ -57,3 +57,16 @@ class AuthorListView(generic.ListView):
     model = Author
     paginate_by = 4
 
+
+# сохранение данных об авторах в БД
+def create(request):
+    if request.method == 'POST':
+        author = Author()
+        author.first_name = request.POST.get('first_name')
+        author.last_name = request.POST.get('last_name')
+        author.date_of_birth = request.POST.get('date_of_birth')
+        author.date_of_death = request.POST.get('date_of_death')
+        author.save()
+        return HttpResponseRedirect('/authors_add/')
+
+
