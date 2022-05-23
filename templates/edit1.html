@@ -8,19 +8,27 @@
     {% csrf_token %}
     <p>
         <label>Изменить имя</label><br>
-        <input type="text" name="first_name" value="{{ author.first_name }}"/>
+        <label>
+            <input type="text" name="first_name" value="{{ author.first_name }}"/>
+        </label>
     </p>
     <p>
         <label>Изменить фамилию</label><br>
-        <input type="text" name="last_name" value="{{ author.last_name }}"/>
+        <label>
+            <input type="text" name="last_name" value="{{ author.last_name }}"/>
+        </label>
     </p>
     <p>
         <label>Изменить дату рождения</label><br>
-        <input type="text" name="date_of_birth" value="{{ author.date_of_birth }}"/>
+        <label>
+            <input type="text" name="date_of_birth" value="{{ author.date_of_birth }}"/>
+        </label>
     </p>
     <p>
         <label>Изменить дату смерти</label><br>
-        <input type="text" name="date_of_death" value="{{ author.date_of_death }}"/>
+        <label>
+            <input type="text" name="date_of_death" value="{{ author.date_of_death }}"/>
+        </label>
     </p>
         <input type="submit" value="Сохранить">
     </form>

@@ -21,7 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-o!uz267%0tla(v8c$pxx_-y+pbyz%+wrr_d(1cx_p$mw#4*d)t'
+
+
 import os
+
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'y+pbyz%+wrr_d(1cx_p$mw#4*d)t')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -29,7 +32,6 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'y+pbyz%+wrr_d(1cx_p$mw#4*d)t')
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -76,7 +78,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -86,7 +87,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -106,7 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -117,7 +116,6 @@ TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
