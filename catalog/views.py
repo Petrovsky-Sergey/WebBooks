@@ -1,12 +1,14 @@
-from django.shortcuts import render
-from django.http import *
-from .forms import AuthorsForm
-from .models import Book, Author, BookInstance, Genre
-from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.http import *
+from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.views import generic
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
+from .forms import AuthorsForm
+from .models import Author, BookInstance
 from .models import Book
+
 
 # Create your views here.
 
@@ -19,8 +21,8 @@ def authors_add(request):
 
 
 class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
-    '''Универсальный класс представления списка книг,
-    находящихся в заказе у текущего пользователя.'''
+    """Универсальный класс представления списка книг,
+    находящихся в заказе у текущего пользователя."""
 
     model = BookInstance
     template_name = 'catalog/bookinstance_list_borrowed_user.html'
@@ -84,7 +86,7 @@ def delete(request, id):
 
 
 # изменение данных в БД
-def edit1(request, id):
+def edit(request, id):
     author = Author.objects.get(id=id)
     if request.method == 'POST':
         author.first_name = request.POST.get('first_name')
@@ -94,7 +96,7 @@ def edit1(request, id):
         author.save()
         return HttpResponseRedirect('/authors_add/')
     else:
-        return render(request, 'edit1.html', {'author': author})
+        return render(request, 'edit.html', {'author': author})
 
 
 class BookCreate(CreateView):
