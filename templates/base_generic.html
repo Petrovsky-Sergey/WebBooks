@@ -18,7 +18,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-3">
             {% block sidebar %}
             <ul class="sidebar-nav">
                 <li><a href="{% url 'index' %}">Главная страница</a></li>
@@ -35,7 +35,7 @@
             </ul>
             {% endblock %}
             </div>
-            <div class="col-sm-10 ">
+            <div class="col-sm-7 ">
             {% block content %}{% endblock %}
             {% block pagination %}
                 {% if is_paginated %}
@@ -55,9 +55,12 @@
             {% endblock %}
             {% block footer %}
                 {% block copyright %}
-            <p>Copyright "Serega_Dev", 2022. Все права защищены</p>
+            <p>Copyright "Serega_PyDev", 2022. Все права защищены</p>
                 {% endblock %}
             {% endblock %}
+            </div>
+            <div class="col-sm-2">
+                <img src="{% static 'img/com.png'%}" alt="#">
             </div>
         </div>
     </div>
