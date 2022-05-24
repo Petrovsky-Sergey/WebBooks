@@ -1,35 +1,35 @@
 {% extends 'base_generic.html' %}
 {% block content %}
 
-    <h3>Список авторов в БД</h3>
-    <h4>{{ author.first_name }} {{ author.last_name }}</h4>
+<h3>Список авторов в БД</h3>
+<h4>{{ author.first_name }} {{ author.last_name }}</h4>
 
-    <form method="post">
+<form method="post">
     {% csrf_token %}
     <p>
         <label>Изменить имя</label><br>
         <label>
-            <input type="text" name="first_name" value="{{ author.first_name }}"/>
+            <input type="text" name="first_name" value="{{ author.first_name }}" />
         </label>
     </p>
     <p>
         <label>Изменить фамилию</label><br>
         <label>
-            <input type="text" name="last_name" value="{{ author.last_name }}"/>
+            <input type="text" name="last_name" value="{{ author.last_name }}" />
         </label>
     </p>
     <p>
         <label>Изменить дату рождения</label><br>
         <label>
-            <input type="text" name="date_of_birth" value="{{ author.date_of_birth }}"/>
+            <input type="text" name="date_of_birth" value="{{ author.date_of_birth }}" />
         </label>
     </p>
     <p>
         <label>Изменить дату смерти</label><br>
         <label>
-            <input type="text" name="date_of_death" value="{{ author.date_of_death }}"/>
+            <input type="text" name="date_of_death" value="{{ author.date_of_death }}" />
         </label>
     </p>
-        <input type="submit" value="Сохранить">
-    </form>
+    <input type="submit" value="Сохранить">
+</form>
 {% endblock %}
